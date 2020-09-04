@@ -1,7 +1,9 @@
 "use strict";
 
+const fibSpan = document.getElementById("fib-num");
 const postsSection = document.getElementById("main__posts");
 const myWorker = new Worker("worker.js");
+const myWorker2 = new Worker("worker-2.js");
 
 // myWorker.postMessage("Message test to worker.");
 
@@ -12,6 +14,10 @@ myWorker.onmessage = (event) => {
         createPosts(post.title, post.id);
     }
 };
+
+myWorker2.onmessage = (event) => {
+    fibSpan.textContent = event.data;
+}
 
 function createPosts(titleData, idData) {
     const article = document.createElement("article");
