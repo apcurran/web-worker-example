@@ -7,4 +7,4 @@ function fibonacci(num) {
     return fibonacci(num - 1) + fibonacci(num - 2);
 }
 
-postMessage(`Fib number 42 is ${fibonacci(45)}.`);
+postMessage(`Fib number 42 is ${fibonacci(42)}.`);
